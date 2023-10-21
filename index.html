@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Include Font Awesome CSS for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .password-icon {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <input type="password" id="password-input">
+  <i class="password-icon far fa-eye" id="toggle-password" onclick="togglePasswordVisibility()"></i>
+
+  <script>
+    const passwordInput = document.getElementById('password-input');
+    const togglePasswordIcon = document.getElementById('toggle-password');
+
+    function togglePasswordVisibility() {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        togglePasswordIcon.classList.remove('fa-eye');
+        togglePasswordIcon.classList.add('fa-eye-slash');
+      } else {
+        passwordInput.type = 'password';
+        togglePasswordIcon.classList.remove('fa-eye-slash');
+        togglePasswordIcon.classList.add('fa-eye');
+      }
+    }
+  </script>
+</body>
+</html>
